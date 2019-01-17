@@ -195,9 +195,16 @@ namespace DataStructure
             ////using try block to execute normal flow of the program
             try
             {
-                foreach (string cust in this.queue)
+                if (queue != null)
                 {
-                    Console.WriteLine(cust);
+                    foreach (string cust in this.queue)
+                    {
+                        Console.WriteLine(cust);
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("No one is in queue");
                 }
                 ////using recursive method
                 this.BankOperations();

@@ -6,30 +6,55 @@
 namespace DataStructure
 {
     using System;
+    using System.Collections;
 
     /// <summary>
     /// This class will check the string is palindrome or not
     /// </summary>
-   public class PalindromeChecker
-   {
+    public class PalindromeChecker
+    {
         /// <summary>
         /// The method check the input string is Palindrome or not
         /// </summary>
-        /// <param name="st"> string </param>
-        /// <returns> boolean </returns>
-        public bool IsPalindrome(string st)
+        public void IsPalindrome()
         {
-          
-            ////Declaring char array and storing inside that
-            char[] ch = st.ToCharArray();
-            ////i is first index of our array
-            int i = 0;
-            ////l is the last index of our array
-            int l = ch.Length - 1;
-            ////here while loop check by comparing first and last element either they are same or not
-            ////if same it will return true else return false
-            while (i < l && ch[i++] == ch[l--]);  
-            return i >= l;
+            ////creating two queue to compare from starting index and last index
+            Queue queue1 = new Queue();
+            Queue queue2 = new Queue();
+            ////taking user input 
+            Console.WriteLine("Enter string to check either it is Palindrome or not");
+            string word = Console.ReadLine();
+            int flag = 0;
+            ////converting given string to char array
+            char[] ch = word.ToCharArray();
+            ////this itertaion will be in forward direction
+            for (int i = 0; i < ch.Length; i++)
+            {
+                queue1.Enqueue(ch[i]);
+            }
+            ////this iteration is in reverse direction
+            for (int j = ch.Length - 1; j >= 0; j--)
+            {
+                queue2.Enqueue(ch[j]);
+            }
+            ////checking if queue is not equal to zero
+            while ((queue1.Count != 0) && (queue2.Count != 0))
+            {
+                ////here deque both and check if both are equal or not
+                if ((char)queue1.Dequeue() != (char)queue2.Dequeue())
+                {
+                    flag++;
+                }
+            }
+
+            if (flag > 0)
+            {
+                Console.WriteLine(word + " not is Palindrome");
+            }
+            else
+            {
+                Console.WriteLine(word + " is  Palindrome");
+            }
         }
     }
 }

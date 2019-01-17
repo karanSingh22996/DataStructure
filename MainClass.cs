@@ -31,6 +31,7 @@ namespace DataStructure
                 Console.WriteLine("Enter 5 to execute prime number in 2D Program ");
                 Console.WriteLine("Enter 6 to execute CashCounter Program ");
                 Console.WriteLine("Enter 7 to execute PalindromeChecker Program");
+                Console.WriteLine("Enter 8 to execute Hashing Program");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 ////swich case will directly goes to that chosen program and start execution of that program
                 switch (choice)
@@ -80,17 +81,14 @@ namespace DataStructure
                         break;
                     case 7:
                         PalindromeChecker palindromeChecker = new PalindromeChecker();
-                        Console.WriteLine("Enter the string to check palindrome");
-                        string st = Console.ReadLine();
-                        bool res = palindromeChecker.IsPalindrome(st);
-                        if (res)
-                        {
-                            Console.WriteLine(st + " is Palindrome ");
-                        }
-                        else
-                        {
-                            Console.WriteLine(st + " is not palindrome");
-                        }
+                        palindromeChecker.IsPalindrome();
+
+                        break;
+                    case 8:
+                        HashingFunction hashingFunction = new HashingFunction(30);
+                        string[] elementsToAdd = { "1", "11", "24", "28", "37", "101", "228", "339", "448", "129" };
+                        hashingFunction.HashFunction(elementsToAdd, hashingFunction.theArray);
+                        hashingFunction.DisplayTheStack();
                         break;
                     default:
                         Console.WriteLine("Provide Data in Range");

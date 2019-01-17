@@ -46,6 +46,7 @@
     <Compile Include="BalancedParenthesis.cs" />
     <Compile Include="Calendar.cs" />
     <Compile Include="CashCounter.cs" />
+    <Compile Include="HashingFunction.cs" />
     <Compile Include="MainClass.cs" />
     <Compile Include="PalindromeChecker.cs" />
     <Compile Include="PrimeNumber.cs" />
