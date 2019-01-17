@@ -76,7 +76,7 @@ namespace DataStructure
                         break;
                     case 6:
                         CashCounter cashCounter = new CashCounter();
-                        cashCounter.MaintainBank();
+                        cashCounter.BankOperations();
                         break;
                     case 7:
                         PalindromeChecker palindromeChecker = new PalindromeChecker();
