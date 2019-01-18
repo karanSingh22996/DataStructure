@@ -32,6 +32,7 @@ namespace DataStructure
                 Console.WriteLine("Enter 6 to execute CashCounter Program ");
                 Console.WriteLine("Enter 7 to execute PalindromeChecker Program");
                 Console.WriteLine("Enter 8 to execute Hashing Program");
+                Console.WriteLine("Enter 9 to execute Number of Binary search Program");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 ////swich case will directly goes to that chosen program and start execution of that program
                 switch (choice)
@@ -85,10 +86,20 @@ namespace DataStructure
 
                         break;
                     case 8:
-                        HashingFunction hashingFunction = new HashingFunction(30);
-                        string[] elementsToAdd = { "1", "11", "24", "28", "37", "101", "228", "339", "448", "129" };
-                        hashingFunction.HashFunction(elementsToAdd, hashingFunction.theArray);
-                        hashingFunction.DisplayTheStack();
+                        HashingFunction hashingFunction = new HashingFunction();
+                        int[] hash = { 31,45,87,90 };
+                        for(int i = 0; i < hash.Length; i++)
+                        {
+                            hashingFunction.Put(i, hash[i]);
+                        }
+                        //hashingFunction.PrintHash();
+                        Console.WriteLine(hashingFunction.get(3));
+
+
+                        break;
+                    case 9:
+                        BinarySearchTree bst = new BinarySearchTree();
+                        bst.CountBst(5);
                         break;
                     default:
                         Console.WriteLine("Provide Data in Range");
