@@ -15,7 +15,7 @@ namespace DataStructure
         }
         public int HashKey(int key)
         {
-            return key % 11;
+            return key % arr.Length;
         }
         public void Put(int key,int value)
         {
