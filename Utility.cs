@@ -6,11 +6,12 @@
 namespace DataStructure
 {
     using System;
+    using System.Collections;
 
     /// <summary>
     /// utility class contains all the reusable methods
     /// </summary>
-   public class Utility
+    public class Utility
     {
         /// <summary>
         /// return file path of unordered file
@@ -58,6 +59,29 @@ namespace DataStructure
             }
 
             Console.WriteLine();
+        }
+        public static bool IsPrime(int n)
+        {
+           for(int i = 2; i <= n / 2; i++)
+            {
+                if (n % i == 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        public static ArrayList ListOfPrimes()
+        {
+            ArrayList list = new ArrayList();
+            for(int i = 1; i <= 1000; i++)
+            {
+                if (IsPrime(i))
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
         }
     }
 }

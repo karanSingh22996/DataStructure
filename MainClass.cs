@@ -33,6 +33,9 @@ namespace DataStructure
                 Console.WriteLine("Enter 7 to execute PalindromeChecker Program");
                 Console.WriteLine("Enter 8 to execute Hashing Program");
                 Console.WriteLine("Enter 9 to execute Number of Binary search Program");
+                Console.WriteLine("Enter 9 to execute Number of Binary search Program");
+                Console.WriteLine("Enter 9 to execute Number of Binary search Program");
+                Console.WriteLine("Enter 10 to execute anagram Program");
                 int choice = Convert.ToInt32(Console.ReadLine());
                 ////swich case will directly goes to that chosen program and start execution of that program
                 switch (choice)
@@ -100,6 +103,10 @@ namespace DataStructure
                     case 9:
                         BinarySearchTree bst = new BinarySearchTree();
                         bst.CountBst(5);
+                        break;
+                    case 10:
+                        AnagramOfPrimes anp = new AnagramOfPrimes();
+                        anp.Anagram();
                         break;
                     default:
                         Console.WriteLine("Provide Data in Range");

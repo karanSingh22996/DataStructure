@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnagramOfPrimes.cs" />
     <Compile Include="BalancedParenthesis.cs" />
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Calendar.cs" />
