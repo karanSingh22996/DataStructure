@@ -7,6 +7,7 @@ namespace DataStructure
 {
     using System;
     using System.Collections;
+    using System.Collections.Generic;
 
     /// <summary>
     /// utility class contains all the reusable methods
@@ -79,6 +80,18 @@ namespace DataStructure
                 if (IsPrime(i))
                 {
                     list.Add(i);
+                }
+            }
+            return list;
+        }
+        public static LinkedList<int> ListOfPrimesLinked()
+        {
+            LinkedList<int> list = new LinkedList<int>();
+            for (int i = 1; i <= 1000; i++)
+            {
+                if (IsPrime(i))
+                {
+                    list.AddFirst(i);
                 }
             }
             return list;
