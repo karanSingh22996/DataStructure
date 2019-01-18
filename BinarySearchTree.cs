@@ -17,7 +17,7 @@ namespace DataStructure
         public void CountBst(int n)
         {
            long count = Factorial(2 * n) / (Factorial(n + 1)*Factorial(n));
-            Console.WriteLine(count);
+            Console.WriteLine("Number of binary search = " + count);
             //Console.WriteLine("Enter number of test case");
             //int testCase = Convert.ToInt32(Console.ReadLine());
             //int[] test = new int[testCase];

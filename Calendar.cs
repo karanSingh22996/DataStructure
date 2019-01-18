@@ -63,9 +63,10 @@ namespace DataStructure
             int year = Convert.ToInt32(Console.ReadLine());     // year
 
             //// months[i] = name of month i
+            //// leave empty so that months[1] = "January"
             string[] months =
             {
-            "",                               //// leave empty so that months[1] = "January"
+            "",                               
             "January", "February", "March",
             "April", "May", "June",
             "July", "August", "September",
@@ -89,12 +90,12 @@ namespace DataStructure
             //// print the calendar
             for (int i = 0; i < d; i++)
             { 
-                Console.WriteLine("   ");
+                Console.Write("  ");
             }
 
             for (int i = 1; i <= days[month]; i++)
             {
-                Console.Write(" "+i + " ");
+                Console.Write(i + " ");
                 if (((i + d) % 7 == 0) || (i == days[month]))
                 { 
                     Console.WriteLine();

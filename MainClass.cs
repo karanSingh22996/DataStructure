@@ -103,7 +103,9 @@ namespace DataStructure
                             break;
                         case 9:
                             BinarySearchTree bst = new BinarySearchTree();
-                            bst.CountBst(5);
+                            Console.WriteLine("Enter number to check number of binary tree in given number");
+                            int binary = Convert.ToInt32(Console.ReadLine());
+                            bst.CountBst(binary);
                             break;
                         case 10:
                             AnagramOfPrimes anp = new AnagramOfPrimes();

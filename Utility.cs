@@ -96,5 +96,14 @@ namespace DataStructure
             }
             return list;
         }
+        public static int Day(int month, int year)
+        {
+            int day = 1;
+            int y = (year - (14 - month)) / 12;
+            int x = y + (y / 4) - (y / 100) + (y / 400);
+            int m = month + (12 * (14 - month) / 12) - 2;
+            int d = ((day + x + (31 * m)) / 12) % 7;
+            return d;
+        }
     }
 }
