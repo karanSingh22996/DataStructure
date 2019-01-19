@@ -23,11 +23,20 @@ namespace DataStructure
         /// <returns> return integer </returns>
         public int Day(int month, int year)
         {
-            int day = 1;
-            int y = (year - (14 - month)) / 12;
-            int x = y + (y / 4) - (y / 100) + (y / 400);
-            int m = month + (12 * (14 - month) / 12) - 2;
-            int d = ((day + x + (31 * m)) / 12) % 7;
+            int d = 0;
+            try
+            {
+                int day = 1;
+                int y = (year - (14 - month)) / 12;
+                int x = y + (y / 4) - (y / 100) + (y / 400);
+                int m = month + (12 * (14 - month) / 12) - 2;
+                d = ((day + x + (31 * m)) / 12) % 7;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return d;
         }
 
@@ -38,14 +47,21 @@ namespace DataStructure
         /// <returns> true or false </returns>
         public bool IsLeapYear(int year)
         {
-            if ((year % 4 == 0) && (year % 100 != 0))
-            { 
-                return true;
-            }
-
-            if (year % 400 == 0)
+            try
             {
-                return true;
+                if ((year % 4 == 0) && (year % 100 != 0))
+                {
+                    return true;
+                }
+
+                if (year % 400 == 0)
+                {
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             return false;
@@ -56,49 +72,56 @@ namespace DataStructure
         /// </summary>
         public void DisplayCalender()
         {
-            Console.WriteLine("Enter month");
-            int month = Convert.ToInt32(Console.ReadLine()); // month (Jan = 1, Dec = 12)
-            Console.WriteLine("Enter year");
-            int year = Convert.ToInt32(Console.ReadLine());     // year
-
-            //// months[i] = name of month i
-            //// leave empty so that months[1] = "January"
-            string[] months =
+            try
             {
-            "",                               
+                Console.WriteLine("Enter month");
+                int month = Convert.ToInt32(Console.ReadLine()); // month (Jan = 1, Dec = 12)
+                Console.WriteLine("Enter year");
+                int year = Convert.ToInt32(Console.ReadLine());     // year
+
+                //// months[i] = name of month i
+                //// leave empty so that months[1] = "January"
+                string[] months =
+                {
+            "",
             "January", "February", "March",
             "April", "May", "June",
             "July", "August", "September",
             "October", "November", "December"
             };
-            //// days[i] = number of days in month i
-            int[] days =
-            {
+                //// days[i] = number of days in month i
+                int[] days =
+                {
             0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
             };
-            //// check for leap year
-            if (month == 2 && this.IsLeapYear(year))
-            {
-                days[month] = 29;
-            }
-            //// print calendar header
-            Console.WriteLine("   " + months[month] + "  " + year);
-            Console.WriteLine(" S  M Tu  W Th  F  S");
-            //// starting day
-            int d = this.Day(month, year);
-            //// print the calendar
-            for (int i = 0; i < d; i++)
-            { 
-                Console.Write("  ");
-            }
-
-            for (int i = 1; i <= days[month]; i++)
-            {
-                Console.Write(i + " ");
-                if (((i + d) % 7 == 0) || (i == days[month]))
-                { 
-                    Console.WriteLine();
+                //// check for leap year
+                if (month == 2 && this.IsLeapYear(year))
+                {
+                    days[month] = 29;
                 }
+                //// print calendar header
+                Console.WriteLine("   " + months[month] + "  " + year);
+                Console.WriteLine(" S  M Tu  W Th  F  S");
+                //// starting day
+                int d = this.Day(month, year);
+                //// print the calendar
+                for (int i = 0; i < d; i++)
+                {
+                    Console.Write("  ");
+                }
+
+                for (int i = 1; i <= days[month]; i++)
+                {
+                    Console.Write(i + " ");
+                    if (((i + d) % 7 == 0) || (i == days[month]))
+                    {
+                        Console.WriteLine();
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }

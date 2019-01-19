@@ -20,7 +20,16 @@ namespace DataStructure
         /// <returns>string return type</returns>
         public static string FilePathUnordered()
         {
-            string path = @"C:\Users\admin\Desktop\Files\karan.txt";
+            string path = null;
+            try
+            {
+                path = @"C:\Users\admin\Desktop\Files\karan.txt";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return path;
         }
 
@@ -30,36 +39,52 @@ namespace DataStructure
         /// <returns>string return type</returns>
         public static string FilePathOrdered()
         {
-            string path = @"C:\Users\admin\Desktop\Files\ordered.txt";
+            string path = null;
+            try
+            {
+                path = @"C:\Users\admin\Desktop\Files\ordered.txt";
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return path;
         }
-        
+
         /// <summary>
         /// bubble sort is use to sort the integer data
         /// </summary>
         /// <param name="arr">array of integer</param>
         public static void BubbleSortInt(int[] arr)
         {
-            for (int i = 0; i < arr.GetLength(0) - 1; i++)
+            try
             {
-                for (int j = 1; j < arr.GetLength(0) - i; j++)
+                for (int i = 0; i < arr.GetLength(0) - 1; i++)
                 {
-                    if (arr[j - 1] > arr[j])
+                    for (int j = 1; j < arr.GetLength(0) - i; j++)
                     {
-                        int temp = arr[j - 1];
-                        arr[j - 1] = arr[j];
-                        arr[j] = temp;
+                        if (arr[j - 1] > arr[j])
+                        {
+                            int temp = arr[j - 1];
+                            arr[j - 1] = arr[j];
+                            arr[j] = temp;
+                        }
                     }
                 }
-            }
 
-            Console.WriteLine("Sorted Array is:");
-            for (int i = 0; i < arr.GetLength(0); i++)
+                Console.WriteLine("Sorted Array is:");
+                for (int i = 0; i < arr.GetLength(0); i++)
+                {
+                    Console.Write(arr[i] + " ");
+                }
+
+                Console.WriteLine();
+            }
+            catch (Exception e)
             {
-                Console.Write(arr[i] + " ");
+                Console.WriteLine(e.Message);
             }
-
-            Console.WriteLine();
         }
 
         /// <summary>
@@ -69,12 +94,19 @@ namespace DataStructure
         /// <returns> boolean </returns>
         public static bool IsPrime(int n)
         {
-           for (int i = 2; i <= n / 2; i++)
+            try
             {
-                if (n % i == 0)
+                for (int i = 2; i <= n / 2; i++)
                 {
-                    return false;
+                    if (n % i == 0)
+                    {
+                        return false;
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             return true;
@@ -83,38 +115,52 @@ namespace DataStructure
         /// <summary>
         /// List of prime method will print the total prime numbers in a range
         /// </summary>
-        /// <returns>ArrayList</returns>
+        /// <returns> ArrayList </returns>
         public static ArrayList ListOfPrimes()
         {
             ////Creating arrayList class
             ArrayList list = new ArrayList();
-            ////iterating loop till the length of arraylist
-            for (int i = 1; i <= 1000; i++)
+            try
             {
-                ////condition is checked if number is prime or not
-                if (IsPrime(i))
+                ////iterating loop till the length of arraylist
+                for (int i = 1; i <= 1000; i++)
                 {
-                    ////adding all prime number into arraylist
-                    list.Add(i);
+                    ////condition is checked if number is prime or not
+                    if (IsPrime(i))
+                    {
+                        ////adding all prime number into arraylist
+                        list.Add(i);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
             ////returning the arraylist as list
             return list;
         }
 
         /// <summary>
-        /// this is storing prime number in linkedlist
+        /// this is storing prime number Linked List
         /// </summary>
-        /// <returns> linkedlist </returns>
+        /// <returns> Linked List </returns>
         public static LinkedList<int> ListOfPrimesLinked()
         {
             LinkedList<int> list = new LinkedList<int>();
-            for (int i = 1; i <= 1000; i++)
+            try
             {
-                if (IsPrime(i))
+                for (int i = 1; i <= 1000; i++)
                 {
-                    list.AddFirst(i);
+                    if (IsPrime(i))
+                    {
+                        list.AddFirst(i);
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             return list;
@@ -128,11 +174,19 @@ namespace DataStructure
         /// <returns> integer </returns>
         public static int Day(int month, int year)
         {
-            
-            int y = (year - (14 - month)) / 12;
-            int x = y + (y / 4) - (y / 100) + (y / 400);
-            int m = month + (12 * (14 - month) / 12) - 2;
-            int d = ((1 + x + (31 * m)) / 12) % 7;
+            int d = 0;
+            try
+            {
+                int y = (year - (14 - month)) / 12;
+                int x = y + (y / 4) - (y / 100) + (y / 400);
+                int m = month + (12 * (14 - month) / 12) - 2;
+                 d = ((1 + x + (31 * m)) / 12) % 7;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             return d;
         }
     }

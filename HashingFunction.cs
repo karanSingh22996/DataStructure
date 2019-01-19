@@ -43,20 +43,26 @@ namespace DataStructure
         /// <param name="value"> value </param>
         public void Put(int key, int value)
         {
-            ////calling the method hashedkey and storing inside integer variable
-            int hashedKey = this.HashKey(key);
-            ////checking condition if array is occupied or not
-            if (this.arr[hashedKey] != 0)
+            try
             {
-                Console.WriteLine("There already an at position " + hashedKey);
+                ////calling the method hashedkey and storing inside integer variable
+                int hashedKey = this.HashKey(key);
+                ////checking condition if array is occupied or not
+                if (this.arr[hashedKey] != 0)
+                {
+                    Console.WriteLine("There already an at position " + hashedKey);
+                }
+                else
+                {
+                    ////assingning the valu in array
+                    this.arr[hashedKey] = value;
+                }
             }
-            else
+            catch (Exception e)
             {
-                ////assingning the valu in array
-                this.arr[hashedKey] = value;
+                Console.WriteLine(e.Message);
             }
         }
-
         /// <summary>
         /// get key will return unique key value
         /// </summary>
@@ -75,9 +81,16 @@ namespace DataStructure
         /// </summary>
         public void PrintHash()
         {
-            for (int i = 0; i < this.arr.Length; i++)
+            try
             {
-                Console.WriteLine(this.arr[i] + " ");
+                for (int i = 0; i < this.arr.Length; i++)
+                {
+                    Console.WriteLine(this.arr[i] + " ");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
         }
     }

@@ -22,68 +22,75 @@ namespace DataStructure
         {
             ////declaring and initialiazing two D array
             int[,] prime = new int[10, 25];
-            ////declaring variable equal to total row number
-            int first = 0, second = 0, third = 0, fourth = 0;
-            int fifth = 0, sixth = 0, seventh = 0, eight = 0, nineth = 0, ten = 0;
-            ////Iteration will continue till the given range of the
-            ////number and check how many numbers are prime in that range
-            for (int i = 2; i < n; i++)
+            try
             {
-                int flag = 0;
-                ////iteration is use to check number is prime or not
-                for (int j = 2; j < i; j++)
+                ////declaring variable equal to total row number
+                int first = 0, second = 0, third = 0, fourth = 0;
+                int fifth = 0, sixth = 0, seventh = 0, eight = 0, nineth = 0, ten = 0;
+                ////Iteration will continue till the given range of the
+                ////number and check how many numbers are prime in that range
+                for (int i = 2; i < n; i++)
                 {
-                    ////if this satify then number is not prime
-                    if (i % j == 0)
+                    int flag = 0;
+                    ////iteration is use to check number is prime or not
+                    for (int j = 2; j < i; j++)
                     {
-                        flag = 1;
+                        ////if this satify then number is not prime
+                        if (i % j == 0)
+                        {
+                            flag = 1;
+                        }
+                    }
+                    ////if value of flag is zero then number is prime 
+                    if (flag == 0)
+                    {
+                        ////store prime in range 0-100
+                        if ((i > 0) && (i <= 100))
+                        {
+                            prime[0, first++] = i;
+                        }
+                        else if ((i > 100) && (i <= 200))
+                        {
+                            prime[1, second++] = i;
+                        }
+                        else if ((i > 200) && (i <= 300))
+                        {
+                            prime[2, third++] = i;
+                        }
+                        else if ((i > 300) && (i <= 400))
+                        {
+                            prime[3, fourth++] = i;
+                        }
+                        else if ((i > 400) && (i <= 500))
+                        {
+                            prime[4, fifth++] = i;
+                        }
+                        else if ((i > 500) && (i <= 600))
+                        {
+                            prime[5, sixth++] = i;
+                        }
+                        else if ((i > 600) && (i <= 700))
+                        {
+                            prime[6, seventh++] = i;
+                        }
+                        else if ((i > 700) && (i <= 800))
+                        {
+                            prime[7, eight++] = i;
+                        }
+                        else if ((i > 800) && (i <= 900))
+                        {
+                            prime[8, nineth++] = i;
+                        }
+                        else if ((i > 900) && (i <= 1000))
+                        {
+                            prime[9, ten++] = i;
+                        }
                     }
                 }
-                ////if value of flag is zero then number is prime 
-                if (flag == 0)
-                {
-                    ////store prime in range 0-100
-                    if ((i > 0) && (i <= 100))
-                    {
-                        prime[0, first++] = i;
-                    }
-                    else if ((i > 100) && (i <= 200))
-                    {
-                        prime[1, second++] = i;
-                    }
-                    else if ((i > 200) && (i <= 300))
-                    {
-                        prime[2, third++] = i;
-                    }
-                    else if ((i > 300) && (i <= 400))
-                    {
-                        prime[3, fourth++] = i;
-                    }
-                    else if ((i > 400) && (i <= 500))
-                    {
-                        prime[4, fifth++] = i;
-                    }
-                    else if ((i > 500) && (i <= 600))
-                    {
-                        prime[5, sixth++] = i;
-                    }
-                    else if ((i > 600) && (i <= 700))
-                    {
-                        prime[6, seventh++] = i;
-                    }
-                    else if ((i > 700) && (i <= 800))
-                    {
-                        prime[7, eight++] = i;
-                    }
-                    else if ((i > 800) && (i <= 900))
-                    {
-                        prime[8, nineth++] = i;
-                    }
-                    else if ((i > 900) && (i <= 1000)) 
-                    {
-                        prime[9, ten++] = i;
-                    }
-                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
             }
 
             return prime;
