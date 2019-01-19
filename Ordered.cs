@@ -37,6 +37,7 @@ namespace DataStructure
                     while ((s = sr.ReadLine()) != null)
                     {
                         ////using parse method to convert string into number
+                        s.Split(',');
                         int number = int.Parse(s);
                         ////adding file data to linked list
                         linkedList.AddFirst(number);

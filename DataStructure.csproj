@@ -48,6 +48,7 @@
     <Compile Include="BalancedParenthesis.cs" />
     <Compile Include="BinarySearchTree.cs" />
     <Compile Include="Calendar.cs" />
+    <Compile Include="CalenderStack.cs" />
     <Compile Include="CashCounter.cs" />
     <Compile Include="HashingFunction.cs">
       <ExcludeFromStyleCop>True</ExcludeFromStyleCop>

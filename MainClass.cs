@@ -135,6 +135,9 @@ namespace DataStructure
             {
                 Console.WriteLine(e.Message);
             }
+            Console.ReadLine();
         }
+        
     }
+
 }

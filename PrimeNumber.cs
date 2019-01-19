@@ -43,7 +43,7 @@ namespace DataStructure
                     }
                     ////if value of flag is zero then number is prime 
                     if (flag == 0)
-                    {
+                    {                                 
                         ////store prime in range 0-100
                         if ((i > 0) && (i <= 100))
                         {
