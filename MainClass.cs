@@ -37,6 +37,7 @@ namespace DataStructure
                     Console.WriteLine("Enter 9 to execute Number of Binary search Program");
                     Console.WriteLine("Enter 10 to execute anagram using stack Program");
                     Console.WriteLine("Enter 11 to execute anagram using Queue Program");
+                    Console.WriteLine("Enter 12 to execute weekday in Queue Program");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     ////swich case will directly goes to that chosen program and start execution of that program
                     switch (choice)
@@ -64,18 +65,20 @@ namespace DataStructure
                             {
                                 Console.Write("col" + x + "\t");
                             }
+
                             Console.WriteLine("\n");
 
                             int[,] prime = primeNumber.Prime2DArray(1000);
 
                             for (int k = 0; k < 10; k++)
                             {
-                                Console.WriteLine("range:" + (k * 100 + 1) + "-" + (k * 100 + 100) + "\t");
+                                Console.WriteLine("range:" + ((k * 100) + 1) + "-" + ((k * 100) + 100) + "\t");
                                 Console.Write(" row" + (k + 1) + "-->\t");
                                 for (int l = 0; l < 25; l++)
                                 {
                                     Console.Write(prime[k, l] + "\t");
                                 }
+
                                 Console.WriteLine();
                             }
 
@@ -96,10 +99,9 @@ namespace DataStructure
                             {
                                 hashingFunction.Put(hash[i], i);
                             }
+
                             hashingFunction.PrintHash();
-                            Console.WriteLine(hashingFunction.get(3));
-
-
+                            Console.WriteLine(hashingFunction.Get(3));
                             break;
                         case 9:
                             BinarySearchTree bst = new BinarySearchTree();
@@ -114,6 +116,10 @@ namespace DataStructure
                         case 11:
                             AnagramQueue anagramQueue = new AnagramQueue();
                             anagramQueue.QueueAnagram();
+                            break;
+                        case 12:
+                            CalenderQueue weekDay = new CalenderQueue();
+                            weekDay.CalenderPrinting();
                             break;
                         default:
                             Console.WriteLine("Provide Data in Range");

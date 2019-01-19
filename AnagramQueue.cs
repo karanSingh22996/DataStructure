@@ -1,17 +1,26 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AnagramQueue.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructure
 {
-    class AnagramQueue
+    using System;
+    using System.Collections;
+
+        /// <summary>
+        /// Anagram queue class will store all the prime number which are anagram
+        /// </summary>
+    public class AnagramQueue
     {
+        /// <summary>
+        /// queueAnagram method stores all the prime numbers which are prime and also anagram in queue
+        /// </summary>
         public void QueueAnagram()
         {
+            ////creating object of queue
             Queue queue = new Queue();
+            ////assigning the list of number return by listOfPrimes method into an arraylist
             ArrayList list = Utility.ListOfPrimes();
             Console.WriteLine("printing the prime numbers that are anagram");
             ////nested for loop is used for taking the prime numbers from the array list
@@ -40,6 +49,7 @@ namespace DataStructure
                     }
                 }
             }
+
             Console.WriteLine("List of anagram in range 0-1000 which are prime:");
             foreach (string ana in queue)
             {

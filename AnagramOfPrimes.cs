@@ -1,14 +1,26 @@
-﻿using System;
-using System.Collections;
-
+﻿//-----------------------------------------------------------------------
+// <copyright file="AnagramOfPrimes.cs" company="BridgeLabz">
+//     Company copyright tag.
+// </copyright>
+//-----------------------------------------------------------------------
 namespace DataStructure
 {
-    class AnagramOfPrimes
+    using System;
+    using System.Collections;
+
+    /// <summary>
+    /// the class is storing all the prime number which are anagrams
+    /// </summary>
+    public class AnagramOfPrimes
     {
-       
+        /// <summary>
+        /// anagram method will add all prime number which are anagram in stack
+        /// </summary>
         public void Anagram()
         {
+            ////creating stack object
             Stack stack = new Stack();
+            ////assignig the primenumber in arraylist
             ArrayList list = Utility.ListOfPrimes();
             Console.WriteLine("printing the prime numbers that are anagram");
             ////nested for loop is used for taking the prime numbers from the array list
@@ -37,14 +49,15 @@ namespace DataStructure
                     }
                 }
             }
+
             Console.WriteLine("List of anagram in range 0-1000 which are prime:");
-            foreach(string ana in stack)
+            ////enhanced for loop for printing till the last element of the run
+            foreach (string ana in stack)
             {
-                Console.Write(ana+" ");
+                Console.Write(ana + " ");
             }
 
             Console.ReadLine();
         }
     }
 }
-

@@ -61,29 +61,51 @@ namespace DataStructure
 
             Console.WriteLine();
         }
+
+        /// <summary>
+        /// IsPrime method will check either given number is prime or not
+        /// </summary>
+        /// <param name="n"> integer </param>
+        /// <returns> boolean </returns>
         public static bool IsPrime(int n)
         {
-           for(int i = 2; i <= n / 2; i++)
+           for (int i = 2; i <= n / 2; i++)
             {
                 if (n % i == 0)
                 {
                     return false;
                 }
             }
+
             return true;
         }
+
+        /// <summary>
+        /// List of prime method will print the total prime numbers in a range
+        /// </summary>
+        /// <returns>ArrayList</returns>
         public static ArrayList ListOfPrimes()
         {
+            ////Creating arrayList class
             ArrayList list = new ArrayList();
-            for(int i = 1; i <= 1000; i++)
+            ////iterating loop till the length of arraylist
+            for (int i = 1; i <= 1000; i++)
             {
+                ////condition is checked if number is prime or not
                 if (IsPrime(i))
                 {
+                    ////adding all prime number into arraylist
                     list.Add(i);
                 }
             }
+            ////returning the arraylist as list
             return list;
         }
+
+        /// <summary>
+        /// this is storing prime number in linkedlist
+        /// </summary>
+        /// <returns> linkedlist </returns>
         public static LinkedList<int> ListOfPrimesLinked()
         {
             LinkedList<int> list = new LinkedList<int>();
@@ -94,15 +116,23 @@ namespace DataStructure
                     list.AddFirst(i);
                 }
             }
+
             return list;
         }
+
+        /// <summary>
+        /// here we are calculating which day falls on the given day date and month
+        /// </summary>
+        /// <param name="month"> month </param>
+        /// <param name="year"> year </param>
+        /// <returns> integer </returns>
         public static int Day(int month, int year)
         {
-            int day = 1;
+            
             int y = (year - (14 - month)) / 12;
             int x = y + (y / 4) - (y / 100) + (y / 400);
             int m = month + (12 * (14 - month) / 12) - 2;
-            int d = ((day + x + (31 * m)) / 12) % 7;
+            int d = ((1 + x + (31 * m)) / 12) % 7;
             return d;
         }
     }

@@ -195,7 +195,7 @@ namespace DataStructure
             ////using try block to execute normal flow of the program
             try
             {
-                if (queue != null)
+                if (this.queue != null)
                 {
                     foreach (string cust in this.queue)
                     {

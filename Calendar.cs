@@ -13,15 +13,14 @@ namespace DataStructure
     public class Calendar
     {
         /// <summary>
-        /// Given the month, day, and year, return which day
+        /// Given the month and year, return which day
         /// of the week it falls on according to the Gregorian calendar.
         /// For month, use 1 for January, 2 for February, and so forth.
         /// Returns 0 for Sunday, 1 for Monday, and so forth.
         /// </summary>
-        /// <param name="month">month</param>
-        /// <param name="day">day</param>
-        /// <param name="year">year</param>
-        /// <returns>return integer</returns>
+        /// <param name="month"> month </param>
+        /// <param name="year"> year </param>
+        /// <returns> return integer </returns>
         public int Day(int month, int year)
         {
             int day = 1;
@@ -35,8 +34,8 @@ namespace DataStructure
         /// <summary>
         /// return true if the given year is a leap year
         /// </summary>
-        /// <param name="year">year</param>
-        /// <returns>true or false</returns>
+        /// <param name="year"> year </param>
+        /// <returns> true or false </returns>
         public bool IsLeapYear(int year)
         {
             if ((year % 4 == 0) && (year % 100 != 0))
