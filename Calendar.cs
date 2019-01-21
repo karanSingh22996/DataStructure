@@ -23,7 +23,6 @@ namespace DataStructure
         /// <returns> return integer </returns>
         public int Day(int month, int year)
         {
-
             int day = 01;
             int y0 = year - ((14 - month) / 12);
             int x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
@@ -73,34 +72,42 @@ namespace DataStructure
 
                 //// months[i] = name of month i
                 //// leave empty so that months[1] = "January"
-                string[] months =
-                {"", "January", "February", "March","April", "May", "June","July", "August", "September",
-                   "October", "November", "December" };
-                //// days[i] = number of days in month i
-                int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
-                //// check for leap year
-                if (month == 2 && this.IsLeapYear(year))
+                if (month >= 1 && month <= 12 && year >= 1000 && year <= 9999)
                 {
-                    days[month] = 29;
-                }
-                //// print calendar header
-                Console.WriteLine("   " + months[month] + "  " + year);
-                Console.WriteLine("Sun \tMon \tTue \tWed \tThu \tFri \tSat");
-                //// starting day
-                int d = this.Day(month, year);
-                //// print the calendar
-                for (int i = 0; i < d; i++)
-                {
-                    Console.Write("\t");
-                }
-
-                for (int i = 1; i <= days[month]; i++)
-                {
-                    Console.Write(i + "\t");
-                    if (((i + d) % 7 == 0) || (i == days[month]))
+                    string[] months =
+                 { "", "January", "February", "March", "April", "May", "June", "July", "August", "September",
+                   "October", "November", "December"
+                    };
+                    //// days[i] = number of days in month i
+                    int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+                    //// check for leap year
+                    if (month == 2 && this.IsLeapYear(year))
                     {
-                        Console.WriteLine();
+                        days[month] = 29;
                     }
+                    //// print calendar header
+                    Console.WriteLine("   " + months[month] + "  " + year);
+                    Console.WriteLine("Sun \tMon \tTue \tWed \tThu \tFri \tSat");
+                    //// starting day
+                    int d = this.Day(month, year);
+                    //// print the calendar
+                    for (int i = 0; i < d; i++)
+                    {
+                        Console.Write("\t");
+                    }
+
+                    for (int i = 1; i <= days[month]; i++)
+                    {
+                        Console.Write(i + "\t");
+                        if (((i + d) % 7 == 0) || (i == days[month]))
+                        {
+                            Console.WriteLine();
+                        }
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Enter proper month or date");
                 }
             }
             catch (Exception e)

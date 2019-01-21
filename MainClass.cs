@@ -43,8 +43,8 @@ namespace DataStructure
                     switch (choice)
                     {
                         case 1:
-                            UnOrdered unOrdered = new UnOrdered();
-                            unOrdered.UnOrderedOperations();
+                            UnOrdered unordered = new UnOrdered();
+                            unordered.UnOrderedOperations();
                             break;
                         case 2:
                             Ordered ordered = new Ordered();
@@ -61,10 +61,10 @@ namespace DataStructure
                         case 5:
                             PrimeNumber primeNumber = new PrimeNumber();
                             Console.Write("\t\t\t\t");
-                            for (int x = 1; x <= 25; x++)
-                            {
-                                Console.Write("col" + x + "\t");
-                            }
+                            ////for (int x = 1; x <= 25; x++)
+                            ////{
+                            ////    Console.Write("col" + x + "\t");
+                            ////}
 
                             Console.WriteLine("\n");
 
@@ -76,7 +76,14 @@ namespace DataStructure
                                 Console.Write(" row" + (k + 1) + "-->\t");
                                 for (int l = 0; l < 25; l++)
                                 {
-                                    Console.Write(prime[k, l] + "\t");
+                                    if (prime[k, l] > 0)
+                                    {
+                                        Console.Write(prime[k, l] + "\t");
+                                    }
+                                    else
+                                    {
+                                        Console.Write(" " + "\t");
+                                    }
                                 }
 
                                 Console.WriteLine();
@@ -105,7 +112,7 @@ namespace DataStructure
                             break;
                         case 9:
                             BinarySearchTree bst = new BinarySearchTree();
-                            Console.WriteLine("Enter number to check number of binary tree in given number");
+                            Console.WriteLine("Enter number");
                             int binary = Convert.ToInt32(Console.ReadLine());
                             bst.CountBst(binary);
                             break;
@@ -135,9 +142,8 @@ namespace DataStructure
             {
                 Console.WriteLine(e.Message);
             }
-            Console.ReadLine();
-        }
-        
-    }
 
+            Console.ReadLine();
+        }        
+    }
 }
