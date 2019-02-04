@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnagramIn2D.cs" />
     <Compile Include="AnagramOfPrimes.cs" />
     <Compile Include="AnagramQueue.cs" />
     <Compile Include="BalancedParenthesis.cs" />

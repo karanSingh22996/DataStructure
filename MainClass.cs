@@ -33,11 +33,13 @@ namespace DataStructure
                     Console.WriteLine("Enter 5 to execute prime number in 2D Program ");
                     Console.WriteLine("Enter 6 to execute CashCounter Program ");
                     Console.WriteLine("Enter 7 to execute PalindromeChecker Program");
-                    Console.WriteLine("Enter 8 to execute Hashing Program");
+                    Console.WriteLine("Enter 8 to execute Anagram in 2d Program");
                     Console.WriteLine("Enter 9 to execute Number of Binary search Program");
                     Console.WriteLine("Enter 10 to execute anagram using stack Program");
                     Console.WriteLine("Enter 11 to execute anagram using Queue Program");
-                    Console.WriteLine("Enter 12 to execute weekday in Queue Program");
+                    Console.WriteLine("Enter 12 to execute Calendar in Queue Program");
+                    Console.WriteLine("Enter 13 to execute Calendar in Stack Program");
+                    Console.WriteLine("Enter 14 to execute Hashing Program");
                     int choice = Convert.ToInt32(Console.ReadLine());
                     ////swich case will directly goes to that chosen program and start execution of that program
                     switch (choice)
@@ -60,35 +62,7 @@ namespace DataStructure
                             break;
                         case 5:
                             PrimeNumber primeNumber = new PrimeNumber();
-                            Console.Write("\t\t\t\t");
-                            ////for (int x = 1; x <= 25; x++)
-                            ////{
-                            ////    Console.Write("col" + x + "\t");
-                            ////}
-
-                            Console.WriteLine("\n");
-
-                            int[,] prime = primeNumber.Prime2DArray(1000);
-
-                            for (int k = 0; k < 10; k++)
-                            {
-                                Console.WriteLine("range:" + ((k * 100) + 1) + "-" + ((k * 100) + 100) + "\t");
-                                Console.Write(" row" + (k + 1) + "-->\t");
-                                for (int l = 0; l < 25; l++)
-                                {
-                                    if (prime[k, l] > 0)
-                                    {
-                                        Console.Write(prime[k, l] + "\t");
-                                    }
-                                    else
-                                    {
-                                        Console.Write(" " + "\t");
-                                    }
-                                }
-
-                                Console.WriteLine();
-                            }
-
+                             primeNumber.Results();
                             break;
                         case 6:
                             CashCounter cashCounter = new CashCounter();
@@ -100,21 +74,12 @@ namespace DataStructure
 
                             break;
                         case 8:
-                            HashingFunction hashingFunction = new HashingFunction();
-                            int[] hash = { 31, 45, 87, 90, 220, 555, 121, 190, 196 };
-                            for (int i = 0; i < hash.Length; i++)
-                            {
-                                hashingFunction.Put(hash[i], i);
-                            }
-
-                            hashingFunction.PrintHash();
-                            Console.WriteLine(hashingFunction.Get(3));
+                            AnagramIn2D anagramIn2D = new AnagramIn2D();
+                            anagramIn2D.Results();
                             break;
                         case 9:
                             BinarySearchTree bst = new BinarySearchTree();
-                            Console.WriteLine("Enter number");
-                            int binary = Convert.ToInt32(Console.ReadLine());
-                            bst.CountBst(binary);
+                            bst.Binary();
                             break;
                         case 10:
                             AnagramOfPrimes anp = new AnagramOfPrimes();
@@ -127,6 +92,14 @@ namespace DataStructure
                         case 12:
                             CalenderQueue weekDay = new CalenderQueue();
                             weekDay.CalenderPrinting();
+                            break;
+                        case 13:
+                            CalendarStack calendarStack = new CalendarStack();
+                            calendarStack.CalenderUsingStack();
+                            break;
+                        case 14:
+                            HashingFunction hashingFunction = new HashingFunction();
+                            hashingFunction.StoringAndRetrievingNumbers();
                             break;
                         default:
                             Console.WriteLine("Provide Data in Range");

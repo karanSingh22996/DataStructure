@@ -69,7 +69,7 @@ namespace DataStructure
             }
             catch (Exception e)
             {
-                Console.WriteLine("Invalid Arithmetic Expression");
+                Console.WriteLine("Invalid Arithmetic Expression " + e.Message);
                 this.BalanceCheck();
             }
         }

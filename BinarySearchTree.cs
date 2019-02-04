@@ -15,7 +15,7 @@ namespace DataStructure
         /// <summary>
         /// Factorial method calculate the factorial of a number
         /// </summary>
-        /// <param name="n"> integer </param>
+        /// <param name="n"> integer number </param>
         /// <returns> long return type </returns>
         public long Factorial(int n)
         {
@@ -43,7 +43,7 @@ namespace DataStructure
         /// <summary>
         /// count binary search tree method will calculate the number of binary search tree
         /// </summary>
-        /// <param name="n"> integer </param>
+        /// <param name="n"> integer number </param>
         public void CountBst(int n)
         {
             try
@@ -55,6 +55,17 @@ namespace DataStructure
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        /// <summary>
+        /// Binary method will take input from user and print the number of binary tree.
+        /// </summary>
+        public void Binary()
+        {
+            BinarySearchTree bst = new BinarySearchTree();
+            Console.WriteLine("Enter number");
+            int binary = Convert.ToInt32(Console.ReadLine());
+            bst.CountBst(binary);
         }
     }
 }

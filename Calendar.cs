@@ -18,9 +18,9 @@ namespace DataStructure
         /// For month, use 1 for January, 2 for February, and so forth.
         /// Returns 0 for Sunday, 1 for Monday, and so forth.
         /// </summary>
-        /// <param name="month"> month </param>
-        /// <param name="year"> year </param>
-        /// <returns> return integer </returns>
+        /// <param name="month"> integer month </param>
+        /// <param name="year"> integer year </param>
+        /// <returns> return integer number </returns>
         public int Day(int month, int year)
         {
             int day = 01;
@@ -34,7 +34,7 @@ namespace DataStructure
         /// <summary>
         /// return true if the given year is a leap year
         /// </summary>
-        /// <param name="year"> year </param>
+        /// <param name="year"> integer year </param>
         /// <returns> true or false </returns>
         public bool IsLeapYear(int year)
         {
@@ -75,7 +75,8 @@ namespace DataStructure
                 if (month >= 1 && month <= 12 && year >= 1000 && year <= 9999)
                 {
                     string[] months =
-                 { "", "January", "February", "March", "April", "May", "June", "July", "August", "September",
+                    {
+                        string.Empty, "January", "February", "March", "April", "May", "June", "July", "August", "September",
                    "October", "November", "December"
                     };
                     //// days[i] = number of days in month i

@@ -90,8 +90,8 @@ namespace DataStructure
         /// <summary>
         /// IsPrime method will check either given number is prime or not
         /// </summary>
-        /// <param name="n"> integer </param>
-        /// <returns> boolean </returns>
+        /// <param name="n"> integer number </param>
+        /// <returns> boolean true or false </returns>
         public static bool IsPrime(int n)
         {
             try
@@ -115,7 +115,7 @@ namespace DataStructure
         /// <summary>
         /// List of prime method will print the total prime numbers in a range
         /// </summary>
-        /// <returns> ArrayList </returns>
+        /// <returns> ArrayList of primes </returns>
         public static ArrayList ListOfPrimes()
         {
             ////Creating arrayList class
@@ -123,7 +123,7 @@ namespace DataStructure
             try
             {
                 ////iterating loop till the length of arraylist
-                for (int i = 1; i <= 1000; i++)
+                for (int i = 2; i <= 1000; i++)
                 {
                     ////condition is checked if number is prime or not
                     if (IsPrime(i))
@@ -150,7 +150,7 @@ namespace DataStructure
             LinkedList<int> list = new LinkedList<int>();
             try
             {
-                for (int i = 1; i <= 1000; i++)
+                for (int i = 2; i <= 1000; i++)
                 {
                     if (IsPrime(i))
                     {
@@ -169,25 +169,35 @@ namespace DataStructure
         /// <summary>
         /// here we are calculating which day falls on the given day date and month
         /// </summary>
-        /// <param name="month"> month </param>
-        /// <param name="year"> year </param>
-        /// <returns> integer </returns>
+        /// <param name="month"> integer month </param>
+        /// <param name="year"> integer year </param>
+        /// <returns> integer number</returns>
         public static int Day(int month, int year)
         {
-            int d = 0;
+            int d0 = 0;
             try
             {
                 int y0 = year - ((14 - month) / 12);
                 int x = y0 + (y0 / 4) - (y0 / 100) + (y0 / 400);
                 int m0 = month + (12 * ((14 - month) / 12)) - 2;
-                int d0 = (01 + x + (31 * m0 / 12)) % 7;
+                 d0 = (01 + x + (31 * m0 / 12)) % 7;
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
 
-            return d;
+            return d0;
+        }
+
+        /// <summary>
+        /// Hashing the file.
+        /// </summary>
+        /// <returns>string items</returns>
+        public static string HashingFile()
+        {
+            string path = @"C:\Users\admin\Desktop\Files\Hash.txt";
+            return path;
         }
     }
 }

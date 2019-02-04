@@ -27,7 +27,7 @@ namespace DataStructure
             int y = 0;
             int m = 0;
             try
-            {              
+            {
                 Console.WriteLine("enter month");
                 ////taking the input month from the user
                 m = Convert.ToInt32(Console.ReadLine());
@@ -47,7 +47,7 @@ namespace DataStructure
                 ////calling the DayOfWeek method for calculating the at which day the date 1st is comming
                 int day = Utility.Day(y, m);
                 ////this condition is used for checking wheter the given year is a leap year, if it is a leap year we will replace 28 days with 29 days
-                if ((m == 2) && (y % 4 == 0))
+                if ((m == 2) && (y % 4 == 0) && (y % 100 != 0) || (y % 400 == 0))
                 {
                     days[2] = 29;
                 }
